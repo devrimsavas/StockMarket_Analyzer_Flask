@@ -1,0 +1,42 @@
+# Virtual environment
+venv/
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Flask instance folder
+instance/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Database files
+*.sqlite3
+
+# MacOS system files
+.DS_Store
+
+# Node modules (if you're using npm for frontend dependencies)
+node_modules/
+
+# Static files generated during builds (optional)
+static/
+dist/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+*.coverage
+.cache

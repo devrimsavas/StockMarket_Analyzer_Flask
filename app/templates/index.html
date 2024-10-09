@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="display-4">Welcome to the Stock Market Analysis Tool</h1>
+            <p class="lead mt-4">
+                Analyze stock data with advanced machine learning models, including linear regression and LSTM (Long
+                Short-Term Memory).
+                Fetch historical stock data from Yahoo Finance and get predictions for future prices based on detailed
+                analysis.
+            </p>
+            <hr>
+            <h3>Key Features:</h3>
+            <ul class="list-group list-group-flush text-start">
+                <li class="list-group-item">Fetch stock data for companies over periods ranging from 1 day to 5 years.
+                </li>
+                <li class="list-group-item">Analyze stock prices using both linear regression and LSTM models.</li>
+                <li class="list-group-item">Visualize historical data and future predictions with detailed graphs.</li>
+                <li class="list-group-item">Search for companies or tickers using a live search function.</li>
+                <li class="list-group-item">Easily navigate between company analysis and other app features.</li>
+            </ul>
+            <a href="/getcompanyinfo" class="btn btn-primary mt-4">Start Your Analysis</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
