@@ -1,6 +1,3 @@
-//global baseUrl
-//const baseUrl = window.location.origin;
-
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("lsmmodelbutton").addEventListener("click", (e) => {
     e.preventDefault();
@@ -19,9 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Display loading message while waiting for the analysis
+    const lstmResultsDiv = document.getElementById("lstm-results");
+    lstmResultsDiv.innerHTML = `<p>Analyzing... Please wait.</p>`;
+
     // Fetch and display the data
     fetch(`${baseUrl}/lstmmodel`, {
-      // Use baseUrl dynamically
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,14 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         console.log("LSTM Data:", data);
 
-        // Update only the #lstm-results div without affecting Sklearn results
-        const lstmResultsDiv = document.getElementById("lstm-results");
-        lstmResultsDiv.innerHTML = `Predicted Stock Price: $${data.predicted_stock_price.toFixed(
+        // Check if epoch data is available and display it
+        if (data.epochs) {
+          const epochsHtml = data.epochs
+            .map(
+              (epoch, index) =>
+                `<p>Epoch ${index + 1}: Loss - ${epoch.loss}</p>`
+            )
+            .join("");
+
+          lstmResultsDiv.innerHTML = `<h5>Epoch Data:</h5>${epochsHtml}`;
+        }
+
+        // Display the final predicted stock price
+        lstmResultsDiv.innerHTML += `Predicted Stock Price: $${data.predicted_stock_price.toFixed(
           2
         )}`;
       })
       .catch((error) => {
         console.error("Error:", error);
+        lstmResultsDiv.innerHTML = `<p>Error occurred during the analysis.</p>`;
       });
   });
 });
