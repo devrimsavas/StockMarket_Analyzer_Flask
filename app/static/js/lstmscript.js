@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lstmResultsDiv = document.getElementById("lstm-results");
     lstmResultsDiv.innerHTML = `<p>Analyzing... Please wait.</p>`;
 
-    // Fetch and display the data
+    // Correct fetch call without the extra :5000
     fetch(`${baseUrl}/lstmmodel`, {
       method: "POST",
       headers: {
