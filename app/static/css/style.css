@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  width: 100vw;
+
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #2b082b;
+}
+
+table tr td {
+  border-collapse: collapse;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.scrollable-table {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+th,
+td {
+  white-space: nowrap;
+}
+
+/* Set the graph image to be larger */
+
+.graph-container img {
+  max-width: 100%;
+  height: auto;
+  /*min-height: 500px;*/
+}
+
+.company-tick:hover {
+  background-color: green;
+  cursor: pointer;
+  font-size: larger;
+}
+
+/* Updated company-chart styles */
+
+.highest-price {
+  color: black; /* Green for emphasis */
+}
+
+.lowest-price {
+  color: black;
+}
+
+/* Set a minimum height for the analysis cards */
+.card-analysis {
+  min-height: 250px; /* Set a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ensure the result section expands with the content */
+.card-analysis .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-analysis {
+    min-height: 300px; /* Increase height for smaller screens if needed */
+  }
+}

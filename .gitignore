@@ -28,7 +28,7 @@ instance/
 node_modules/
 
 # Static files generated during builds (optional)
-static/
+
 dist/
 
 # Pytest cache
